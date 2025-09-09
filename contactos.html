@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos - TechStore</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-laptop"></i>
+                <h1>TechStore</h1>
+            </div>
+            
+            <!-- Menú de navegación -->
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Acerca de</a></li>
+                    <li><a href="contactos.html" class="nav-link active">Contáctenos</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-simple">
+        <div class="container">
+            <h1>Contáctenos</h1>
+            <p>Estamos aquí para ayudarte. Comunícate con nosotros a través de cualquiera de estos canales</p>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>+1 (555) 123-4567</p>
+                    <p>+1 (555) 987-6543</p>
+                    <small>Lunes a Viernes: 9:00 AM - 6:00 PM</small>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@techstore.com</p>
+                    <p>soporte@techstore.com</p>
+                    <small>Respuesta en 24 horas</small>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p>123 Tech Street</p>
+                    <p>Ciudad Tech, TC 12345</p>
+                    <small>Visítanos en nuestra tienda física</small>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Chat en Vivo</h3>
+                    <p>Soporte instantáneo</p>
+                    <p>24/7 disponible</p>
+                    <button class="chat-btn">Iniciar Chat</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-grid">
+                <div class="form-content">
+                    <h2>Envíanos un Mensaje</h2>
+                    <p>¿Tienes alguna pregunta, sugerencia o necesitas soporte técnico? Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                    
+                    <div class="contact-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Respuesta rápida en menos de 24 horas</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Atención personalizada por expertos</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-shield-check"></i>
+                            <span>Información 100% segura y privada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100">
+                            <span class="error-text"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-text"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" pattern="[0-9+\-\s\(\)]+">
+                            <span class="error-text"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="consulta-producto">Consulta sobre producto</option>
+                                <option value="soporte-tecnico">Soporte técnico</option>
+                                <option value="devoluciones">Devoluciones y cambios</option>
+                                <option value="garantias">Garantías</option>
+                                <option value="facturacion">Facturación</option>
+                                <option value="sugerencias">Sugerencias</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                            <span class="error-text"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required minlength="10" maxlength="1000" placeholder="Describe tu consulta detalladamente..."></textarea>
+                            <span class="error-text"></span>
+                            <small class="char-count">0/1000 caracteres</small>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="acepto-terminos" name="acepto-terminos" required>
+                                <span class="checkmark"></span>
+                                Acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#" target="_blank">política de privacidad</a> *
+                            </label>
+                            <span class="error-text"></span>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="acepto-newsletter" name="acepto-newsletter">
+                                <span class="checkmark"></span>
+                                Quiero recibir ofertas y noticias por correo electrónico
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                        
+                        <div class="form-messages">
+                            <div class="success-message" id="successMessage"></div>
+                            <div class="error-message" id="errorMessage"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Nuestra Ubicación</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Mapa interactivo</p>
+                    <small>123 Tech Street, Ciudad Tech, TC 12345</small>
+                </div>
+                <!-- En un proyecto real, aquí integrarías Google Maps o similar -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Rápidas -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuál es el tiempo de entrega?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El tiempo de entrega estándar es de 3-5 días hábiles. Para envíos express, la entrega es en 1-2 días hábiles. Los tiempos pueden variar según la ubicación.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecen garantía en los productos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, todos nuestros productos incluyen garantía del fabricante. Además, ofrecemos garantía extendida opcional y soporte técnico especializado.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Puedo devolver un producto?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tienes 30 días para devolver cualquier producto en perfecto estado. El proceso es simple y sin complicaciones. Consulta nuestra política de devoluciones.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo puedo rastrear mi pedido?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Una vez que tu pedido sea enviado, recibirás un código de rastreo por email. Puedes seguir tu paquete en tiempo real en nuestra página web.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horarios de Atención -->
+    <section class="schedule-section">
+        <div class="container">
+            <h2>Horarios de Atención</h2>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <h3>Tienda Física</h3>
+                    <div class="schedule-item">
+                        <span>Lunes a Viernes:</span>
+                        <span>9:00 AM - 7:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Sábados:</span>
+                        <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Domingos:</span>
+                        <span>10:00 AM - 3:00 PM</span>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <h3>Atención Telefónica</h3>
+                    <div class="schedule-item">
+                        <span>Lunes a Viernes:</span>
+                        <span>8:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Sábados:</span>
+                        <span>9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Domingos:</span>
+                        <span>Cerrado</span>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <h3>Soporte en Línea</h3>
+                    <div class="schedule-item">
+                        <span>Chat en Vivo:</span>
+                        <span>24/7</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Email:</span>
+                        <span>Respuesta en 24h</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Redes Sociales:</span>
+                        <span>Lun-Vie 9AM-6PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechStore</h3>
+                    <p>Tu tienda de confianza para productos tecnológicos de calidad.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Acerca de</a></li>
+                        <li><a href="contactos.html">Contacto</a></li>
+                        <li><a href="#">Políticas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Tablets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Atención al Cliente</h3>
+                    <ul>
+                        <li><a href="#">Soporte</a></li>
+                        <li><a href="#">Garantías</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
