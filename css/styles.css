@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #16a34a;
-    --secondary-color: #15803d;
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
     --accent-color: #f59e0b;
     --text-color: #1f2937;
     --bg-color: #f8fafc;
@@ -1176,7 +1176,7 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(--0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 

@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Formulario de contacto
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    const submitBtn = form.querySelector('.submit-btn');
     
     if (!form) return;
-    
-    const submitBtn = form.querySelector('.submit-btn');
     
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -42,9 +41,6 @@ function initContactForm() {
 // Validar formulario completo
 function validateForm() {
     const form = document.getElementById('contactForm');
-    
-    if (!form) return false;
-    
     let isValid = true;
     
     // Validar nombre
@@ -147,38 +143,27 @@ function validateField(field) {
 
 // Mostrar error en campo
 function showFieldError(field, message) {
-    if (!field) return;
-    
     const formGroup = field.closest('.form-group');
-    const errorText = formGroup ? formGroup.querySelector('.error-text') : null;
+    const errorText = formGroup.querySelector('.error-text');
     
     field.style.borderColor = 'var(--error-color)';
-    if (errorText) {
-        errorText.textContent = message;
-        errorText.style.display = 'block';
-    }
+    errorText.textContent = message;
+    errorText.style.display = 'block';
 }
 
 // Limpiar error de campo
 function clearFieldError(field) {
-    if (!field) return;
-    
     const formGroup = field.closest('.form-group');
-    const errorText = formGroup ? formGroup.querySelector('.error-text') : null;
+    const errorText = formGroup.querySelector('.error-text');
     
     field.style.borderColor = '';
-    if (errorText) {
-        errorText.textContent = '';
-        errorText.style.display = 'none';
-    }
+    errorText.textContent = '';
+    errorText.style.display = 'none';
 }
 
 // Enviar formulario
 function submitForm() {
     const form = document.getElementById('contactForm');
-    
-    if (!form) return;
-    
     const submitBtn = form.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     
@@ -204,8 +189,6 @@ function showSuccessMessage(message) {
     const successDiv = document.getElementById('successMessage');
     const errorDiv = document.getElementById('errorMessage');
     
-    if (!successDiv || !errorDiv) return;
-    
     errorDiv.style.display = 'none';
     successDiv.textContent = message;
     successDiv.style.display = 'block';
@@ -219,8 +202,6 @@ function showSuccessMessage(message) {
 function showErrorMessage(message) {
     const errorDiv = document.getElementById('errorMessage');
     const successDiv = document.getElementById('successMessage');
-    
-    if (!errorDiv || !successDiv) return;
     
     successDiv.style.display = 'none';
     errorDiv.textContent = message;
@@ -261,7 +242,7 @@ function initChatButton() {
     if (chatBtn) {
         chatBtn.addEventListener('click', function() {
             // En un proyecto real, aquí abrirías el widget de chat
-            mostrarNotificacionContacto('Chat en vivo próximamente disponible');
+            mostrarNotificacion('Chat en vivo próximamente disponible');
         });
     }
 }
@@ -292,14 +273,11 @@ function initCharCounter() {
         
         // Hacer la función accesible globalmente para el reset del formulario
         window.updateCharCounter = updateCharCounter;
-        
-        // Llamar inicialmente para mostrar el contador
-        updateCharCounter();
     }
 }
 
-// Función de notificación específica para contacto
-function mostrarNotificacionContacto(mensaje) {
+// Función de notificación (reutilizar del script principal)
+function mostrarNotificacion(mensaje) {
     // Crear elemento de notificación
     const notificacion = document.createElement('div');
     notificacion.className = 'notification';
