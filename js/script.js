@@ -334,3 +334,117 @@ document.addEventListener('DOMContentLoaded', function() {
         images.forEach(img => imageObserver.observe(img));
     }
 });
+
+// Función para cambiar el video de YouTube (sección de tecnología)
+function cambiarVideo() {
+    const videoUrl = document.getElementById('videoUrl').value;
+    const iframe = document.getElementById('youtubeVideo');
+    
+    if (!videoUrl) {
+        alert('Por favor, ingresa un enlace de YouTube');
+        return;
+    }
+    
+    // Extraer el ID del video de diferentes formatos de URL de YouTube
+    let videoId = '';
+    
+    // Patrones para diferentes formatos de URL de YouTube
+    const patterns = [
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+        /youtube\.com\/watch\?.*v=([^&\n?#]+)/
+    ];
+    
+    for (let pattern of patterns) {
+        const match = videoUrl.match(pattern);
+        if (match) {
+            videoId = match[1];
+            break;
+        }
+    }
+    
+    if (!videoId) {
+        alert('Por favor, ingresa un enlace válido de YouTube');
+        return;
+    }
+    
+    // Actualizar el iframe con el nuevo video
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    
+    // Limpiar el campo de entrada
+    document.getElementById('videoUrl').value = '';
+    
+    // Mostrar mensaje de éxito
+    mostrarMensajeExito('¡Video de tecnología cambiado exitosamente!');
+}
+
+// Función para cambiar el video del hero
+function cambiarHeroVideo() {
+    const videoUrl = document.getElementById('heroVideoUrl').value;
+    const iframe = document.getElementById('heroYoutubeVideo');
+    
+    if (!videoUrl) {
+        alert('Por favor, ingresa un enlace de YouTube');
+        return;
+    }
+    
+    // Extraer el ID del video de diferentes formatos de URL de YouTube
+    let videoId = '';
+    
+    // Patrones para diferentes formatos de URL de YouTube
+    const patterns = [
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+        /youtube\.com\/watch\?.*v=([^&\n?#]+)/
+    ];
+    
+    for (let pattern of patterns) {
+        const match = videoUrl.match(pattern);
+        if (match) {
+            videoId = match[1];
+            break;
+        }
+    }
+    
+    if (!videoId) {
+        alert('Por favor, ingresa un enlace válido de YouTube');
+        return;
+    }
+    
+    // Actualizar el iframe con el nuevo video (con autoplay, mute y loop para el hero)
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`;
+    
+    // Limpiar el campo de entrada
+    document.getElementById('heroVideoUrl').value = '';
+    
+    // Mostrar mensaje de éxito
+    mostrarMensajeExito('¡Video principal cambiado exitosamente!');
+}
+
+// Función auxiliar para mostrar mensajes de éxito
+function mostrarMensajeExito(mensaje) {
+    const successMessage = document.createElement('div');
+    successMessage.textContent = mensaje;
+    successMessage.style.cssText = `
+        background: #10b981;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-block;
+    `;
+    
+    // Remover mensaje anterior si existe
+    const existingMessage = document.querySelector('.video-success-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    successMessage.className = 'video-success-message';
+    document.querySelector('.video-controls').appendChild(successMessage);
+    
+    // Remover el mensaje después de 3 segundos
+    setTimeout(() => {
+        if (successMessage.parentNode) {
+            successMessage.remove();
+        }
+    }, 3000);
+}
